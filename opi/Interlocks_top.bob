@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Slow Interlocks</name>
+  <width>1200</width>
+  <background_color>
+    <color name="BACKGROUND" red="220" green="225" blue="221">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_visible>false</grid_visible>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Slow Interlocks</text>
+    <x>113</x>
+    <y>6</y>
+    <width>565</width>
+    <height>37</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container</name>
+    <macros>
+      <DESC></DESC>
+      <P>LLRF-Cntrl:SlowIntlk</P>
+    </macros>
+    <file>helper-opi-files/Slow_interlocks.bob</file>
+    <x>192</x>
+    <y>72</y>
+    <width>330</width>
+    <height>395</height>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container</name>
+    <macros>
+      <PV_FAULT>HPRF-Esys:ExtIntlk</PV_FAULT>
+    </macros>
+    <x>12</x>
+    <y>72</y>
+    <width>169</width>
+    <height>83</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(PV_FAULT)</pv_name>
+      <x>38</x>
+      <y>29</y>
+      <width>93</width>
+      <height>25</height>
+      <off_label>FAULT</off_label>
+      <off_color>
+        <color name="RED" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+      <on_label>OK</on_label>
+      <on_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>HPRF-Esys:ExtIntlkHNOSS:sOutput</pv_name>
+      <x>38</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC>CM Cavity #2</DESC>
+            <P>HPRF-Esys:ExtIntlkHNOSS</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>HPRF-Esys:ExtIntlkLoad1:sOutput</pv_name>
+      <x>63</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC></DESC>
+            <P>HPRF-Esys:ExtIntlkLoad1</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>HPRF-Esys:ExtIntlkLoad2:sOutput</pv_name>
+      <x>88</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC></DESC>
+            <P>HPRF-Esys:ExtIntlkLoad2</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>HPRF-Esys:ExtIntlkCM:sOutput</pv_name>
+      <x>115</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC>CM Cavity #1</DESC>
+            <P>HPRF-Esys:ExtIntlkCM</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>$(PV_FAULT)</text>
+      <x>6</x>
+      <y>8</y>
+      <width>157</width>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container_1</name>
+    <macros>
+      <PV_FAULT>HPRF-DBE:ExtIntlk</PV_FAULT>
+    </macros>
+    <x>12</x>
+    <y>162</y>
+    <width>169</width>
+    <height>83</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(PV_FAULT)</pv_name>
+      <x>38</x>
+      <y>29</y>
+      <width>93</width>
+      <height>25</height>
+      <off_label>FAULT</off_label>
+      <off_color>
+        <color name="RED" red="252" green="13" blue="27">
+        </color>
+      </off_color>
+      <on_label>OK</on_label>
+      <on_color>
+        <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>HPRF-DBE:ExtIntlkHNOSS:sOutput</pv_name>
+      <x>38</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC>CM Cavity #2</DESC>
+            <P>HPRF-DBE:ExtIntlkHNOSS</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>HPRF-DBE:ExtIntlkLoad1:sOutput</pv_name>
+      <x>63</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC></DESC>
+            <P>HPRF-DBE:ExtIntlkLoad1</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>HPRF-DBE:ExtIntlkLoad2:sOutput</pv_name>
+      <x>88</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC></DESC>
+            <P>HPRF-DBE:ExtIntlkLoad2</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>HPRF-DBE:ExtIntlkCM:sOutput</pv_name>
+      <x>115</x>
+      <y>57</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+        <action type="open_display">
+          <file>helper-opi-files/Slow_interlocks.bob</file>
+          <macros>
+            <DESC>CM Cavity #1</DESC>
+            <P>HPRF-DBE:ExtIntlkCM</P>
+          </macros>
+          <target>standalone</target>
+          <description>Show more</description>
+        </action>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)
+Press right mouse button and choose "Show more" to see the details</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>$(PV_FAULT)</text>
+      <x>6</x>
+      <y>8</y>
+      <width>157</width>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container_1</name>
+    <macros>
+      <DESC></DESC>
+      <P>HPRF-PwrCpl:WtrCIntlk</P>
+    </macros>
+    <file>helper-opi-files/Slow_interlocks.opi</file>
+    <x>516</x>
+    <y>72</y>
+    <width>330</width>
+    <height>395</height>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container_2</name>
+    <macros>
+      <DESC></DESC>
+      <P>HPRF-Kly:WtrCIntlk</P>
+    </macros>
+    <file>helper-opi-files/Slow_interlocks.opi</file>
+    <x>840</x>
+    <y>72</y>
+    <width>330</width>
+    <height>395</height>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Reset Sofware Interlock</description>
+      </action>
+    </actions>
+    <pv_name>LLRF-Ctrl:SoftwareIntlk:cOK</pv_name>
+    <x>320</x>
+    <y>415</y>
+    <width>180</width>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>190</x>
+    <y>200</y>
+    <width>130</width>
+    <height>230</height>
+    <points>
+      <point x="10.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="230.0">
+      </point>
+      <point x="130.0" y="230.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="BLACK" red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <line_style>1</line_style>
+  </widget>
+</display>
