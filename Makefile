@@ -1,6 +1,6 @@
 MODULE_NAME := slowintrlck
 
-OPI_VERSION := 1.8.0
+OPI_VERSION := 1.8.1
 OPI_DIRNAME := interlocks
 
 
